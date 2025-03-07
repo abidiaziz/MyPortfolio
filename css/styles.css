@@ -72,9 +72,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 1rem 0; /* Remove horizontal padding, keep vertical */
+  max-width: 100%; /* Take full width */
+  margin: 0; /* Remove margin */
+  width: 100%;
 }
 
 .logo {
@@ -84,17 +85,14 @@ body {
   font-size: 1.25rem;
   color: var(--primary-color);
   cursor: pointer;
-}
-
-.logo i {
-  margin-right: 0.5rem;
-  font-size: 1.5rem;
+  padding-left: 1rem; /* Add padding to just the logo */
 }
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding-right: 1rem; /* Add padding to just the nav-right */
 }
 
 .theme-toggle {
@@ -189,9 +187,6 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
-.method-select:hover {
-  border-color: var(--primary-color);
-}
 
 .url-input-container {
   display: flex;
@@ -837,6 +832,18 @@ pre {
 }
 
 @media (max-width: 480px) {
+  .nav-container {
+    padding: 0.75rem 0;
+  }
+
+  .logo {
+    padding-left: 0.75rem;
+  }
+
+  .nav-right {
+    padding-right: 0.75rem;
+  }
+
   .top-nav {
     padding: 0.75rem 1rem;
   }

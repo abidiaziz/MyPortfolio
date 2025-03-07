@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlInput = document.getElementById("url-input")
     const urlInputContainer = document.querySelector(".url-input-container")
     const urlPrefix = document.querySelector(".url-prefix")
-    const methodSelect = document.getElementById("method-select")
     const sendBtn = document.getElementById("send-btn")
     const respTabBtns = document.querySelectorAll(".resp-tab-btn")
     const responseLoading = document.getElementById("response-loading")
@@ -213,9 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     function handleSendRequest() {
       console.log("Handling send request")
-      const url = urlInput.value
-      const method = methodSelect.value
-  
+      const url = urlInput.value  
       // Show loading state
       responseLoading.classList.remove("hidden")
       responseData.classList.add("hidden")
@@ -300,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
         responseSize.textContent = `${responseJson.length} B`
   
         // Generate code example
-        generateCodeExample(url, method)
+        generateCodeExample(url, "GET")
   
         // Hide loading, show response
         responseLoading.classList.add("hidden")
